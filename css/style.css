@@ -1,0 +1,38 @@
+/* begin body */
+body{
+    background-image: url(../images/fruitbackground.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow-x: hidden; /* Hide vertical scrollbar */
+}
+/* einde body */
+
+/* navbar */
+#navbar{
+    background-color: #a52019;
+    border: 2px solid #000000;
+    margin-top: 0px;
+    min-height: 10px;
+}
+
+
+#nav_text_1:hover {
+    background-color: #d42920;
+    color: black;
+}
+/* #nav_text_1.active {
+    background-color: #d42920;
+    color: black;
+} */
+#nav_text_1{
+    color: white;
+}
+
+/* slideshow */
+.carousel-inner{
+    height: 200px;
+    border:2px solid #000000;
+    border-radius: 60px;
+}
+

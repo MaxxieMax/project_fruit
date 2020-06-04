@@ -13,7 +13,7 @@
       <img class="d-block w-100" src="./images/slideshow/afb2.png" alt="Second slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="./images/slideshow/afb1.png" alt="Third slide">
+      <img class="d-block w-100" src="./images/slideshow/test.png" alt="Third slide">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

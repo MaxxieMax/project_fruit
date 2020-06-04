@@ -13,6 +13,7 @@ body{
     background-color: #a52019;
     border: 2px solid #000000;
     margin-top: 0px;
+    margin-bottom: 2px;
     min-height: 10px;
 }
 
@@ -36,3 +37,20 @@ body{
     border-radius: 60px;
 }
 
+#jumbotron{
+    /* border: 2px solid black; */
+    background-color: transparent;
+    text-align: left;
+}
+
+/* cards */
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+
+.card{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}

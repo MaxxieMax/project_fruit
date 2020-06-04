@@ -26,4 +26,9 @@
   </a>
 </div>
 
-
+<div class="jumbotron jumbotron-fluid" id="jumbotron">
+  <div class="container">
+    <h1 class="display-4">Welkom</h1>
+    <p class="lead">Welkom op www.wijkopenfruit.nl. hier kunt u allerlij soorten exotiche fruit kopen.</p>
+  </div>
+</div>

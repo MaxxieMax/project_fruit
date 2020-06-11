@@ -16,6 +16,7 @@
     <ul class="navbar-nav ml-auto">
       <a class="nav-item nav-link" id="nav_text_1" href="index.php?content=Registratie">Registratie</a>
       <a class="nav-item nav-link" id="nav_text_1" href="index.php?content=login">Inloggen</a>
+      <a class="nav-item nav-link" id="nav_text_1" href="index.php?content=cart">cart</a>
     </ul>
   </div>
 </nav>

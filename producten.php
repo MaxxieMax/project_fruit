@@ -1,16 +1,3 @@
-<!-- <section class="container content-section">
-    <h2 class="section-header">Fruit</h2>
-    <div class="shop-items">
-        <div class="shop-item">
-            <span class="shop-item-title">Album 1</span>
-            <img class="shop-item-image" alt="./images/Producten/durian.png">
-            <div class="shop-item-details">
-            <span class="shop-item-price">$10.00</span>
-            <button class="btn btn-primary shop-item-button" type="button">Toevoegen</button>
-            </div>
-        </div>
-    </div>
-</section> -->
 
 <div class="row">
   <div class="col-4">
@@ -130,7 +117,7 @@
     </div>
   </div>
   <div class="col-4">
-    <div class="card" style="">
+  <div class="card" style="">
         <img class="card-img-top" src="./images/producten/loquat.png" alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title">De loquat</h5>
@@ -143,6 +130,7 @@
         </div>
     </div>
   </div>
+
 
 </div>
 

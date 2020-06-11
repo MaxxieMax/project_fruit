@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 
@@ -20,7 +21,6 @@
 
     <!-- Image and text -->
 </head>
-
 
 
 <body>

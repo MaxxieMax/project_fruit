@@ -18,14 +18,12 @@ body{
 }
 
 
+
 #nav_text_1:hover {
     background-color: #d42920;
     color: black;
 }
-/* #nav_text_1.active {
-    background-color: #d42920;
-    color: black;
-} */
+
 #nav_text_1{
     color: white;
 }
@@ -54,3 +52,4 @@ body{
     margin-bottom: 20px;
     margin-top: 20px;
 }
+

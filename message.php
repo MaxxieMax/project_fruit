@@ -1,7 +1,7 @@
 <?php
     $alert = (isset($_GET["alert"]))? $_GET["alert"]: "default";
-    $id = (isset($_GET["id"]))? $_GET["id"]: "default";
-    $pwh = (isset($_GET["pwh"]))? $_GET["pwh"]: "default";
+    $id = (isset($_GET["id"]))? $_GET["id"]: "";
+    $pwh = (isset($_GET["pwh"]))? $_GET["pwh"]: "";
 
 
     switch($alert){
@@ -47,8 +47,29 @@
          </div>';
          header("refresh: 3; ./index.php?content=activate&id=$id&pwh=$pwh");
         break;
-        case "" :
-
+        case "nomatch-password" :
+          echo '<div class="alert alert-danger mt-5  w-50 mx-auto" role="alert">
+          U heeft niet het zelfde wachtwoord ingevuld, probeer opnieuw.
+         </div>';
+         header("refresh: 3; ./index.php?content=activate&id=$id&pwh=$pwh");
+        break;
+        case "no-id-pwh-match" :
+          echo '<div class="alert alert-danger mt-5  w-50 mx-auto" role="alert">
+          U bent niet geregistreerd in de database, u wordt doorgestuurd naar de registratiepagina.
+         </div>';
+         header("refresh: 3; ./index.php?content=Registratie");
+        break;
+        case "update-success" :
+          echo '<div class="alert alert-succes mt-5  w-50 mx-auto" role="alert">
+          Uw wachtwoord is geupdated.
+         </div>';
+         header("refresh: 3; ./index.php?content=login");
+        break;
+        case "update-error" :
+          echo '<div class="alert alert-danger mt-5  w-50 mx-auto" role="alert">
+          Het is niet gelukt, probeer het opnieuw.
+         </div>';
+         header("refresh: 3; ./index.php?content=activate&id=$id&pwh=$pwh");
         break;
         default:
             header("./index.php?content=home");

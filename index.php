@@ -15,7 +15,10 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <!-- de google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Monoton|Ubuntu&display=swap" rel="stylesheet">
+    <!-- Font Awesome 4 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    
     <title>Exotisch fruit</title>
 
 

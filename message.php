@@ -2,6 +2,7 @@
     $alert = (isset($_GET["alert"]))? $_GET["alert"]: "default";
     $id = (isset($_GET["id"]))? $_GET["id"]: "";
     $pwh = (isset($_GET["pwh"]))? $_GET["pwh"]: "";
+    $email = (isset($_GET["email"]))? $_GET["email"]: "";
 
 
     switch($alert){
@@ -70,6 +71,24 @@
           Het is niet gelukt, probeer het opnieuw.
          </div>';
          header("refresh: 3; ./index.php?content=activate&id=$id&pwh=$pwh");
+        break;
+        case "loginform-empty" :
+          echo '<div class="alert alert-danger mt-5  w-50 mx-auto" role="alert">
+          een van bijde velden zijn niet ingevult, probeer het opnieuw.
+         </div>';
+         header("refresh: 3; ./index.php?content=login");
+        break;
+        case "email-unknow" :
+          echo '<div class="alert alert-danger mt-5  w-50 mx-auto" role="alert">
+          Het email is niet bekent, probeer het opnieuw.
+         </div>';
+         header("refresh: 3; ./index.php?content=login");
+        break;
+        case "not-activated" :
+          echo '<div class="alert alert-danger mt-5  w-50 mx-auto" role="alert">
+          Uw account is nog niet geactiveerd. check uw email <span class="badge badge-primary">' . $email . '</span> voor het linkje
+         </div>';
+         header("refresh: 3; ./index.php?content=login");
         break;
         default:
             header("./index.php?content=home");

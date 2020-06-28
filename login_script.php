@@ -23,12 +23,40 @@
                 header("location: ./index.php?content=message&alert=email-unknow");
             } else {
 
-                $record = mysqli_fetch_assoc($result);
-                // var_dump((bool) $record["activated"]);
+                                $record = mysqli_fetch_assoc($result);
+                                // var_dump((bool) $record["activated"]);
 
-                if (!$record["activated"]) {
-                header("location: ./index.php?content=message&alert=not-activated&email=$email");
-                }
-            }
+                                if (!$record["activated"]) {
+                                header("location: ./index.php?content=message&alert=not-activated&email=$email");
+                                } elseif ( !password_verify($password, $record["Wachtwoord"])) {
+                                    // no pw match
+                                header("location: ./index.php?content=message&alert=no-pw-match&email=$email");
+                                } else {
+                                    // password match
+                                
+                                   switch($record["userrole"]) {
+                                    case 'customer':
+                                    header("location: ./index.php?content=c-home");
+                                    break;
+                                    case 'admin':
+                                    header("location: ./index.php?content=a-home");
+                                    break;
+                                    case 'root':
+                                    header("location: ./index.php?content=r-home");
+                                    break;
+                                    case 'moderator':
+                                    header("location: ./index.php?content=m-home");
+                                    break;
+                                    default:
+                                    header("location: ./index.php?content=home");
+                                    break;
+                                   }
+
+
+
+                                }
+            }// emai onbekend
+
+
     }        // check of alles is ingevult
 ?>

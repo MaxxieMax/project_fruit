@@ -17,6 +17,33 @@
             // melding email bestaat
             header("location: ./index.php?content=message&alert=emailexists");
         } else {
+
+            // $ut = time();
+
+            // echo $ut;
+
+            // echo "<br>";
+
+            // $d = date("d-m-Y", $ut);
+            // echo $d;
+
+            // echo "<br>";
+
+            
+
+            // $onehour = mktime(1, 0,0, 1, 1, 1970);
+            // echo $onehour;
+            // echo "<br>";
+
+
+
+            // $t = date("H:i:s", ($ut + $onehour));
+            // echo $t;
+            // echo "<br>";
+
+            // exit();
+
+
             //  toevoegen aan db
             $password = "TEST";
             $password_hash = password_hash($password, PASSWORD_BCRYPT);
@@ -26,17 +53,15 @@
 
 
             $sql= "INSERT INTO `aanmeldingen` (`id`,
-                                                `Naam`,
                                                 `email`,
                                                 `Wachtwoord`,
-                                                `Nummer`,
-                                                `userrole`)
+                                                `userrole`,
+                                                `activated`)
                         VALUES                  (NULL,
-                                                '',
                                                 '$email',
                                                 '$password_hash',
-                                                '',
-                                                'customer')";
+                                                'customer',
+                                                0)";
 
 
 mysqli_query($conn, $sql);

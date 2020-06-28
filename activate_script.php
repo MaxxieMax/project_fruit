@@ -14,28 +14,40 @@ if(empty($_POST["Password"]) || empty($_POST["PasswordCheck"])) {
     header("location: ./index.php?content=message&alert=nomatch-password&id=$id&pwh=$pwh");
 } else {
 
-    $sql = "SELECT * FROM `aanmeldingen` where `id` = $id AND `Wachtwoord` = '$pwh'";
+    $sql = "SELECT * FROM `aanmeldingen` where `id` = $id";
 
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result)) {
 
-    $password_hash = password_hash($password, PASSWORD_BCRYPT);
+        $record = mysqli_fetch_assoc($result);
+        
+        if ($record["activated"]) {
+            header("Location: ./index.php?content=message&alert=already-active");
+        }else {
 
-    $sql = "UPDATE `aanmeldingen` 
-            SET     `Wachtwoord` = '$password_hash' 
-            WHERE   `id` = $id
-            AND      `Wachtwoord` = '$pwh'";
 
-    if (mysqli_query($conn, $sql)) {
-        // succes
-        header("location: ./index.php?content=message&alert=update-succes");
-    } else {
-        // error
-        header("location: ./index.php?content=message&alert=update-error&id=$id&pwh=$pwh");
-    }
+            $password_hash = password_hash($password, PASSWORD_BCRYPT);
+        
+            $sql = "UPDATE `aanmeldingen` 
+                    SET     `Wachtwoord` = '$password_hash' ,
+                            `activated` = 1 
+                    WHERE   `id` = $id
+                    AND      `Wachtwoord` = '$pwh'";
+        
+            if (mysqli_query($conn, $sql)) {
+                // succes
+                header("location: ./index.php?content=message&alert=update-success");
+            } else {
+                // error
+                header("location: ./index.php?content=message&alert=update-error&id=$id&pwh=$pwh");
+            }
+
+        }
+
 
     }else{
         header("location: ./index.php?content=message&alert=no-id-pwh-match");
     }
 }
+

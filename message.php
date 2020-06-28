@@ -61,7 +61,7 @@
          header("refresh: 3; ./index.php?content=Registratie");
         break;
         case "update-success" :
-          echo '<div class="alert alert-succes mt-5  w-50 mx-auto" role="alert">
+          echo '<div class="alert alert-success mt-5  w-50 mx-auto" role="alert">
           Uw wachtwoord is geupdated.
          </div>';
          header("refresh: 3; ./index.php?content=login");
@@ -86,7 +86,19 @@
         break;
         case "not-activated" :
           echo '<div class="alert alert-danger mt-5  w-50 mx-auto" role="alert">
-          Uw account is nog niet geactiveerd. check uw email <span class="badge badge-primary">' . $email . '</span> voor het linkje
+          Uw account is nog niet geactiveerd. check uw email
+         </div>';
+         header("refresh: 3; ./index.php?content=login");
+        break;
+        case "already-active" :
+          echo '<div class="alert alert-danger mt-5  w-50 mx-auto" role="alert">
+          Uw account al geactiveerd.
+         </div>';
+         header("refresh: 3; ./index.php?content=login");
+        break;
+        case "no-match-pwh" :
+          echo '<div class="alert alert-danger mt-5  w-50 mx-auto" role="alert">
+          Het wachtwoord is niet gelijk.
          </div>';
          header("refresh: 3; ./index.php?content=login");
         break;

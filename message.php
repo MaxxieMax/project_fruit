@@ -74,7 +74,7 @@
         break;
         case "loginform-empty" :
           echo '<div class="alert alert-danger mt-5  w-50 mx-auto" role="alert">
-          een van bijde velden zijn niet ingevult, probeer het opnieuw.
+          Een van bijde velden zijn niet ingevult, probeer het opnieuw.
          </div>';
          header("refresh: 3; ./index.php?content=login");
         break;
@@ -86,7 +86,7 @@
         break;
         case "not-activated" :
           echo '<div class="alert alert-danger mt-5  w-50 mx-auto" role="alert">
-          Uw account is nog niet geactiveerd. check uw email
+          Uw account is nog niet geactiveerd. check uw email '. $email .'
          </div>';
          header("refresh: 3; ./index.php?content=login");
         break;

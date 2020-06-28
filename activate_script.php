@@ -27,23 +27,29 @@ if(empty($_POST["Password"]) || empty($_POST["PasswordCheck"])) {
         }else {
 
 
-            $password_hash = password_hash($password, PASSWORD_BCRYPT);
-        
-            $sql = "UPDATE `aanmeldingen` 
-                    SET     `Wachtwoord` = '$password_hash' ,
-                            `activated` = 1 
-                    WHERE   `id` = $id
-                    AND      `Wachtwoord` = '$pwh'";
-        
-            if (mysqli_query($conn, $sql)) {
-                // succes
-                header("location: ./index.php?content=message&alert=update-success");
+            if ( strcmp($record["wachtwoord"], $pwh)) {
+                $password_hash = password_hash($password, PASSWORD_BCRYPT);
+            
+                $sql = "UPDATE `aanmeldingen` 
+                        SET     `Wachtwoord` = '$password_hash' ,
+                                `activated` = 1 
+                        WHERE   `id` = $id
+                        AND      `Wachtwoord` = '$pwh'";
+            
+                if (mysqli_query($conn, $sql)) {
+                    // succes
+                    header("location: ./index.php?content=message&alert=update-success");
+                } else {
+                    // error
+                    header("location: ./index.php?content=message&alert=update-error&id=$id&pwh=$pwh");
+                }
+
             } else {
-                // error
-                header("location: ./index.php?content=message&alert=update-error&id=$id&pwh=$pwh");
+                header("location: ./index.php?content=message&alert=no-match-pwh");
             }
 
-        }
+            }
+
 
 
     }else{

@@ -108,6 +108,18 @@
          </div>';
          header("refresh: 8; ./index.php?content=login");
         break;
+        case "logout" :
+          echo '<div class="alert alert-success mt-5  w-50 mx-auto" role="alert">
+          U bent uitgelogd, u wordt doorgewezen naar de homepage.
+         </div>';
+         header("refresh: 5; ./index.php?content=homepage");
+        break;
+        case "auth-error" :
+          echo '<div class="alert alert-danger mt-5  w-50 mx-auto" role="alert">
+          U heeft nog geen account aangemaakt, doe dat eerst.
+         </div>';
+         header("refresh: 5; ./index.php?content=login");
+        break;
         default:
             header("./index.php?content=home");
     break;

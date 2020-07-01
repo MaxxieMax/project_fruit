@@ -53,3 +53,33 @@ body{
     margin-top: 20px;
 }
 
+
+
+
+.products {
+    border: 1px solid #333;
+    background-color: white;
+    border-radius: 5px;
+    padding: 16px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+#buttonshop{
+    border: 1px solid #333;
+    border-radius: 5px;
+}
+
+#image{
+
+    width:  200px;
+    height: 150px;
+    object-fit: cover;
+}
+
+#footer{
+    /* background-color: #a52019; */
+    border: 2px solid;
+
+    margin-top: 150px ;
+}

@@ -1,12 +1,24 @@
 ahome
 <?php
-var_dump($_SESSION);
+
+    if (!isset($_SESSION["id"])){
+        header("location: ./index.php?content=message&alert=auth-error");
+    }
+
+?>
+
+
+
+
+
+<?php
+// var_dump($_SESSION);
 
 // unset($_SESSION["id"]);
 // unset($_SESSION["userrole"]);
 // session_unset();
-echo session_id();
-echo "<hr>";
+// echo session_id();
+// echo "<hr>";
 // session_destroy();
 
 // var_dump($_SESSION);

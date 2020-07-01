@@ -27,7 +27,7 @@ if(empty($_POST["Password"]) || empty($_POST["PasswordCheck"])) {
         }else {
 
 
-            if ( strcmp($record["wachtwoord"], $pwh)) {
+            if ( !strcmp($record["Wachtwoord"], $pwh)) {
                 $password_hash = password_hash($password, PASSWORD_BCRYPT);
             
                 $sql = "UPDATE `aanmeldingen` 
